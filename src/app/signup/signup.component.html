@@ -1,0 +1,40 @@
+<div class="container">
+  <form *ngIf="next == false">
+    <div class="f-title">Sign up</div>
+    <div class="example-container">
+        <mat-form-field class="example-full-width">
+          <input [(ngModel)]="name" name="name" matInput placeholder="Full Name">
+        </mat-form-field>
+      <mat-form-field [floatLabel]="options.value.floatLabel" [hideRequiredMarker]="options.value.hideRequired">
+        <input matInput [(ngModel)]="email"  placeholder="Enter your email" [formControl]="email_validation" type="text"  required>
+        <mat-error *ngIf="email_validation.invalid">{{getErrorMessage()}}</mat-error>
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="password" placeholder="Enter your password" [formControl]="password_validation" [type]="hide ? 'password' : 'text'">
+        <mat-error *ngIf="password_validation.invalid">{{getPasswordErrorMessage()}}</mat-error>
+        <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+      </mat-form-field>
+      <mat-form-field >
+        <mat-select [(value)]="selected"  placeholder="Have Store ?" disableRipple>
+          <mat-option  value="1">Yes</mat-option>
+          <mat-option value="2">No</mat-option>
+        </mat-select>
+      </mat-form-field>
+      <button *ngIf="selected == 2" mat-flat-button>Submit</button>
+      <button *ngIf="selected == 1" (click)="nextForm()" mat-flat-button>Continue</button>
+    </div>
+    </form>
+    <form *ngIf="next == true">
+      <div class="example-container">
+      <div class="f-title">Continue</div>
+      <mat-form-field>
+        <input matInput [(ngModel)]="store_name" name="store_name" placeholder="Store Name">
+      </mat-form-field>
+      <mat-form-field>
+        <input matInput [(ngModel)]="address" placeholder="Address">
+      </mat-form-field>
+      <button (click)="prevForm()" mat-flat-button>Back</button>
+      <button type="submit" mat-flat-button>Submit</button>
+      </div>
+    </form>
+</div>

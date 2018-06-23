@@ -1,0 +1,38 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+    width: 100%;
+}
+
+.example-container > * {
+    width: 100%;
+}
+form{
+    padding: 2%;
+    border-radius: 10px;
+    background-color: #f5f7ff;
+    box-shadow: 0px 0px 15px rgba(0,0,0,0.1);
+    margin: 0 auto;
+    width: 350px;
+}
+
+.container{
+    margin-top: 5%;
+}
+
+.f-title{
+    float: right;
+    color: #4b57ce;
+    font-family: "Bahij TheSansArabic Black";
+    font-size: 27px;
+}
+
+mat-form-field input{
+    clear: both;
+    width: 100%;
+    margin-bottom: 5px;
+}
+
+.example-spacer {
+    flex: 1 1 auto;
+}

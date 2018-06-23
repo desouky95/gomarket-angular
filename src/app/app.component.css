@@ -1,0 +1,39 @@
+.example-container {
+    display: flex;
+    flex-direction: column;
+}
+
+.example-container > * {
+    width: 100%;
+}
+a{
+    text-decoration: none;
+    color: #4b57ce;
+    font-family: "Bahij TheSansArabic ExtraLight";
+    font-size: 15px;
+    margin: auto;
+    margin-left: 20px;
+
+}
+mat-sidenav-container{
+    background: transparent;
+    height: 100%;
+    position: fixed;
+    z-index: 1;
+}
+mat-sidenav{
+    width: 150px;
+}
+mat-sidenav button{
+    width: 100%;
+}
+.example-spacer {
+    flex: 1 1 auto;
+}
+
+.title{
+    color: #4b57ce;
+    font-family: "Bahij TheSansArabic Black";
+    font-size: 27px;
+
+}

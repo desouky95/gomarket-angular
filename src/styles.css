@@ -1,0 +1,60 @@
+@import '~@angular/material/prebuilt-themes/deeppurple-amber.css';
+
+.mat-toolbar{
+    padding: 2%;
+    background: rgba(0,0,0,0);
+}
+
+body {
+    font-family: Roboto, Arial, sans-serif;
+    margin: 0;
+    /*background: url("assets/pattern.png");*/
+    background-color: #f5f7ff;
+    /*overflow: auto;*/
+    background-size: 100%;
+
+}
+
+.basic-container {
+    padding: 5px;
+}
+
+.version-info {
+    font-size: 8pt;
+    float: right;
+}
+
+/*
+ * Import required theme for Material2
+ */
+
+
+/*
+ * Actual Sticky Footer Styles
+ */
+.all-wrap {
+    min-height: 100vh;
+}
+
+.page-wrap {
+    display: flex;
+    flex-direction: column;
+    min-height: 100vh;
+}
+
+.content {
+    flex: 1;
+}
+
+
+/*
+ * Make the Component injected by Router Outlet full height:
+ */
+main {
+    display: flex;
+    flex-direction: column;
+}
+> *:not(router-outlet) {
+    flex: 1;
+    display: block;
+}

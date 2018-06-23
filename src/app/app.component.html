@@ -1,0 +1,30 @@
+<mat-sidenav-container class="all-wrap" fullscreen>
+    <mat-sidenav  #sidenav>
+        <mat-list>
+            <mat-list-item [routerLink]="['/']">Home</mat-list-item>
+            <mat-list-item [routerLink]="['/Stores']">Stores</mat-list-item>
+            <mat-list-item [routerLink]="['/Media']">Stores</mat-list-item>
+        </mat-list>
+    </mat-sidenav>
+
+    <div class="page-wrap">
+        <header role="banner">
+            <mat-toolbar>
+                <mat-toolbar-row>
+                    <button type="button" mat-icon-button (click)="sidenav.open()" title="Open sidenav">
+                        <mat-icon>menu</mat-icon>
+                    </button>
+                    <a routerLink="/" class="title">Go Market.</a>
+                    <span class="example-spacer"></span>
+                    <a *ngIf="loggedMessage == false" routerLink="signin"  style="float: right;">Sign in</a>
+                    <a *ngIf="loggedMessage == false " routerLink="signup"  style="float: right;">Sign up</a>
+                    <button *ngIf="loggedMessage == true" mat-mini-fab>{{currentUser.name}}</button>
+                    <a *ngIf="loggedMessage == true" (click)="logout()"  style="float: right;">Logout</a>
+                </mat-toolbar-row>
+            </mat-toolbar>
+        </header>
+        <main class="content">
+            <router-outlet></router-outlet>
+        </main>
+    </div>
+</mat-sidenav-container>

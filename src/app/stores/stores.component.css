@@ -1,0 +1,12 @@
+.container{
+    padding: 20px;
+}
+mat-card{
+    display: inline-block;
+    margin: 10px;
+}
+
+.card-avatar {
+    background: url("../../assets/stores/store1_1.jpg");
+    background-size: cover;
+}

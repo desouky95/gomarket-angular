@@ -1,0 +1,18 @@
+<div class="container">
+    <form (submit)="signin($event)" [formGroup]="options">
+        <div class="f-title">SIGN IN.</div>
+        <div class="example-container" formGroup="">
+            <mat-error ></mat-error>
+            <mat-form-field [floatLabel]="options.value.floatLabel" [hideRequiredMarker]="options.value.hideRequired">
+                <input matInput  placeholder="Enter your email" formControlName="email" type="text"  required>
+                <mat-error *ngIf="options.get('email').invalid">{{getErrorMessage()}}</mat-error>
+            </mat-form-field>
+            <mat-form-field>
+                <input matInput #password placeholder="Enter your password" [formControl]="password" [type]="hide ? 'password' : 'text'">
+                <mat-error *ngIf="options.get('password').invalid">{{getPasswordErrorMessage()}}</mat-error>
+                <mat-icon matSuffix (click)="hide = !hide">{{hide ? 'visibility' : 'visibility_off'}}</mat-icon>
+            </mat-form-field>
+            <button type="submit" mat-flat-button>Submit</button>
+        </div>
+    </form>
+</div>
